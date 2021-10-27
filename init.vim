@@ -5,6 +5,7 @@ set expandtab
 set noswapfile
 set nowrap
 set rnu
+set signcolumn=no
 set softtabstop=2
 set tabstop=2
 
@@ -25,7 +26,6 @@ nnoremap <leader>ep <cmd>Ex<cr>
 " plugins {
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-Plug 'EdenEast/nightfox.nvim'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kien/ctrlp.vim'
@@ -46,7 +46,6 @@ call plug#end()
 " }
 
 " colors {
-colorscheme nightfox
 hi Normal guibg=NONE ctermbg=NONE
 " }
 
