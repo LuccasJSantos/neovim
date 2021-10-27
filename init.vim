@@ -25,7 +25,6 @@ nnoremap <leader>ep <cmd>Ex<cr>
 " plugins {
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-Plug 'EdenEast/nightfox.nvim'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kien/ctrlp.vim'
@@ -46,7 +45,6 @@ call plug#end()
 " }
 
 " colors {
-colorscheme nightfox
 hi Normal guibg=NONE ctermbg=NONE
 " }
 
@@ -89,3 +87,5 @@ nmap <silent> gr <Plug>(coc-references)
 
 " setup prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+
+set signcolumn=no
