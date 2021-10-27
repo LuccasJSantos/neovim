@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "My personal neovim config",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LuccasJSantos/neovim.git"
@@ -16,11 +18,15 @@
   },
   "homepage": "https://github.com/LuccasJSantos/neovim#readme",
   "devDependencies": {
+    "ansi-regex": "^5.0.1",
     "cz-conventional-changelog": "^3.3.0"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "resolutions": {
+    "ansi-regex": "^5.0.1"
   }
 }
