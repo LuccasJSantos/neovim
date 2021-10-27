@@ -5,6 +5,7 @@ set expandtab
 set noswapfile
 set nowrap
 set rnu
+set signcolumn=no
 set softtabstop=2
 set tabstop=2
 
