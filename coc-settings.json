@@ -1,5 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "javascriptreact", "json", "typescript", "typescriptreact"],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "javascriptreact", "json", "purescript", "typescript", "typescriptreact", "vue"],
   "prettier.arrowParens": "always",
   "prettier.endOfLine": "crlf",
   "prettier.semi": false,
@@ -7,6 +7,14 @@
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
   "prettier.bracketSpacing": true,
-  "prettier.eslintIntegration": true
+  "prettier.eslintIntegration": true,
+  "languageserver": {
+    "purescript": {
+      "command": "purescript-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["purescript"],
+      "rootPatterns": ["bower.json", "psc-package.json", "spago.dhall"]
+    }
+  }
 }
 

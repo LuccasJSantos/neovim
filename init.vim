@@ -4,12 +4,13 @@ set autoindent
 set expandtab
 set noswapfile
 set nowrap
+set nu
 set rnu
 set signcolumn=no
 set softtabstop=2
 set tabstop=2
 
-set wildignore+=*/node_modules/*
+set wildignore+=*/node_modules/*,*/webapp/*,*/output/*,*/dist/*
 
 " remaps {
 let mapleader = " "
@@ -26,6 +27,10 @@ nnoremap <leader>ep <cmd>Ex<cr>
 " plugins {
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+Plug 'alvan/vim-closetag'
+let g:closetag_filetypes = 'html,xhtml,phtml,vue,jsx,tsx'
+
+Plug 'gosukiwi/vim-atom-dark'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kien/ctrlp.vim'
@@ -46,9 +51,11 @@ call plug#end()
 " }
 
 " colors {
+" source $HOME/.config/nvim/themes/atom-dark.vim
+" source $HOME/.config/nvim/themes/atom-dark-256.vim
 hi Normal guibg=NONE ctermbg=NONE
+highlight Pmenu ctermfg=white
 " }
-
 
 " Some servers have issues with backup files, see #649.
 set nobackup
@@ -87,6 +94,6 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " setup prettier
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+" command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 set signcolumn=no
