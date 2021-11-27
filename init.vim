@@ -33,6 +33,8 @@ let g:closetag_filetypes = 'html,xhtml,phtml,vue,jsx,tsx'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = ['coc-tsserver', 'coc-pairs', 'coc-vetur', 'coc-json', 'coc-eslint', 'coc-prettier', 'coc-styled-components', 'coc-tailwindcss']
+
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|.git\|dist'
