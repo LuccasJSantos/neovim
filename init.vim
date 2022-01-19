@@ -22,7 +22,11 @@ nnoremap <leader>k <c-w>k
 nnoremap <leader>l <c-w>l
 nnoremap <leader>ep <cmd>Ex<cr>
 
-" }
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 " plugins {
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
@@ -49,12 +53,17 @@ au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 " }
 
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+
 call plug#end()
 " }
 
 " colors {
-" source $HOME/.config/nvim/themes/atom-dark.vim
-" source $HOME/.config/nvim/themes/atom-dark-256.vim
+set t_Co=256
+set cursorline
+colorscheme onehalfdark
+
+let g:airline_theme='onehalfdark'
 hi Normal guibg=NONE ctermbg=NONE
 highlight Pmenu ctermfg=white
 " }
