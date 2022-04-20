@@ -21,6 +21,8 @@ nnoremap <leader>j <c-w>j
 nnoremap <leader>k <c-w>k
 nnoremap <leader>l <c-w>l
 nnoremap <leader>ep <cmd>Ex<cr>
+nnoremap <leader>c I// <ESC>
+nnoremap K i<cr><ESC>
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -34,7 +36,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'alvan/vim-closetag'
 let g:closetag_filetypes = 'html,xhtml,phtml,vue,jsx,tsx'
 
-Plug 'gosukiwi/vim-atom-dark'
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-tsserver', 'coc-pairs', 'coc-vetur', 'coc-json', 'coc-eslint', 'coc-prettier', 'coc-styled-components', 'coc-tailwindcss']
@@ -54,6 +56,7 @@ au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 " }
 
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 " }
@@ -61,10 +64,9 @@ call plug#end()
 " colors {
 set t_Co=256
 set cursorline
-colorscheme onehalfdark
+colorscheme gruvbox
 
-let g:airline_theme='onehalfdark'
-hi Normal guibg=NONE ctermbg=NONE
+let g:airline_theme='gruvbox'
 highlight Pmenu ctermfg=white
 " }
 
