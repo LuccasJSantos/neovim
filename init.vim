@@ -2,6 +2,7 @@ syntax on
 
 set autoindent
 set expandtab
+set guicursor=i:block
 set noswapfile
 set nowrap
 set nu
@@ -11,6 +12,7 @@ set softtabstop=2
 set tabstop=2
 
 set wildignore+=*/node_modules/*,*/webapp/*,*/output/*,*/dist/*
+set splitright " new vertical splits are on the right
 
 " remaps {
 let mapleader = " "
@@ -23,6 +25,7 @@ nnoremap <leader>l <c-w>l
 nnoremap <leader>ep <cmd>Ex<cr>
 nnoremap <leader>c I// <ESC>
 nnoremap K i<cr><ESC>
+tnoremap <Esc> <C-\><C-n>
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
