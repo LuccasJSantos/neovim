@@ -17,6 +17,7 @@ set splitright " new vertical splits are on the right
 " remaps {
 let mapleader = " "
 
+nnoremap <leader>t <cmd>45vs<cr><cmd>terminal<cr>i<esc>
 nnoremap <leader>fi <cmd>CtrlP<cr>
 nnoremap <leader>h <c-w>h
 nnoremap <leader>j <c-w>j
@@ -39,7 +40,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'alvan/vim-closetag'
 let g:closetag_filetypes = 'html,xhtml,phtml,vue,jsx,tsx'
 
-Plug 'morhetz/gruvbox'
+Plug 'projekt0n/github-nvim-theme'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-tsserver', 'coc-pairs', 'coc-vetur', 'coc-json', 'coc-eslint', 'coc-prettier', 'coc-styled-components', 'coc-tailwindcss']
@@ -67,9 +68,9 @@ call plug#end()
 " colors {
 set t_Co=256
 set cursorline
-colorscheme gruvbox
+colorscheme github_dimmed
 
-let g:airline_theme='gruvbox'
+hi Normal guibg=NONE ctermbg=NONE
 highlight Pmenu ctermfg=white
 " }
 
