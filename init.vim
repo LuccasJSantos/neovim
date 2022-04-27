@@ -13,6 +13,8 @@ set tabstop=2
 
 set wildignore+=*/node_modules/*,*/webapp/*,*/output/*,*/dist/*
 set splitright " new vertical splits are on the right
+"set clipboard=unnamedplus " linux
+set clipboard=unnamed " windows
 
 " remaps {
 let mapleader = " "
