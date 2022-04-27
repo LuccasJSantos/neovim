@@ -57,6 +57,11 @@ Plug 'leafgarland/typescript-vim'
 Plug 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_duration = 300
 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='minimalist'
+let g:airline_section_c_only_filename = 1
+
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 " }
