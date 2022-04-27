@@ -24,8 +24,23 @@ nnoremap <leader>j <c-w>j
 nnoremap <leader>k <c-w>k
 nnoremap <leader>l <c-w>l
 nnoremap <leader>ep <cmd>Ex<cr>
-nnoremap K i<cr><ESC>
 tnoremap <Esc> <C-\><C-n>
+" CoC
+" K to show documentation in preview mode
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+" <c-space> to trigger completion preview
+if has('nvim')
+  xnoremap <silent><expr> <c-space> coc#refresh()
+else
+  xnoremap <silent><expr> <c-@> coc#refresh()
+endif
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
