@@ -24,7 +24,6 @@ nnoremap <leader>j <c-w>j
 nnoremap <leader>k <c-w>k
 nnoremap <leader>l <c-w>l
 nnoremap <leader>ep <cmd>Ex<cr>
-nnoremap <leader>c I// <ESC>
 nnoremap K i<cr><ESC>
 tnoremap <Esc> <C-\><C-n>
 
@@ -55,6 +54,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'ianks/vim-tsx'
 Plug 'leafgarland/typescript-vim'
 
+Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_duration = 300
+
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 " }
@@ -69,6 +71,9 @@ call plug#end()
 set t_Co=256
 set cursorline
 colorscheme github_dimmed
+
+" yank highlight reverse
+highlight HighlightedyankRegion cterm=reverse gui=reverse
 
 hi Normal guibg=NONE ctermbg=NONE
 highlight Pmenu ctermfg=white
