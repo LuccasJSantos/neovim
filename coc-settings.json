@@ -13,8 +13,14 @@
     "purescript": {
       "command": "purescript-language-server",
       "args": ["--stdio"],
+      "trace.server": "off",
       "filetypes": ["purescript"],
-      "rootPatterns": ["bower.json", "psc-package.json", "spago.dhall"]
+      "rootPatterns": ["bower.json", "psc-package.json", "spago.dhall"],
+      "settings": {
+        "purescript": {
+          "addSpagoSources": true
+        }
+      }
     }
   }
 }

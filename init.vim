@@ -60,6 +60,10 @@ Plug 'projekt0n/github-nvim-theme'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-tsserver', 'coc-pairs', 'coc-vetur', 'coc-json', 'coc-eslint', 'coc-prettier', 'coc-styled-components', 'coc-tailwindcss']
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_show_hidden = 1
