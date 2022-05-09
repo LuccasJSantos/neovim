@@ -95,7 +95,6 @@ call plug#end()
 
 " colors {
 set t_Co=256
-set cursorline
 colorscheme github_dimmed
 
 " yank highlight reverse
