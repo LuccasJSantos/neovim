@@ -1,25 +1,23 @@
 {
   "coc.preferences.formatOnSaveFiletypes": ["css", "javascriptreact", "json", "purescript", "typescript", "typescriptreact", "vue"],
   "prettier.arrowParens": "always",
-  "prettier.endOfLine": "crlf",
   "prettier.semi": false,
   "prettier.tabWidth": 2,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
   "prettier.bracketSpacing": true,
   "prettier.eslintIntegration": true,
+  "prettier.disableLanguages": ["typescript", "typescriptreact"],
   "javascript.suggestionActions.enabled": false,
   "languageserver": {
     "purescript": {
-      "command": "purescript-language-server",
-      "args": ["--stdio"],
-      "trace.server": "off",
-      "filetypes": ["purescript"],
-      "rootPatterns": ["bower.json", "psc-package.json", "spago.dhall"],
+      "command": "start purescript-language-server",
+      "args": ["--stdio", "--config {}"], 
+      "filetypes": ["purescript"], 
+      "rootPatterns": ["bower.json", "psc-package.json", "spago.dhall"] ,
+      "trace.server": "verbose",
       "settings": {
-        "purescript": {
-          "addSpagoSources": true
-        }
+        "validate": true
       }
     }
   }

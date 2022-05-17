@@ -90,6 +90,19 @@ au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'junegunn/fzf.vim'
 
+" TELESCOPE {
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-telescope/telescope.nvim'
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+" }
+
 call plug#end()
 " }
 
